@@ -1,0 +1,105 @@
+@import "../../settings";
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+
+  .sidebar-logo {
+    background: $darker-bg;
+    padding: $sidebar-padding * 2;
+    i {
+      color: $text-color;
+      font-size: 20px;
+    }
+    img {
+      width: $logo-size;
+    }
+  }
+
+  .sidebar-menu {
+    background: $spot-bg;
+    height: 100%;
+    width: 45px;
+    transition: 0.2s all;
+    &:hover {
+      width: $sidebar-width;
+      .sidebar-menu-item-icon {
+      }
+
+      .sidebar-menu-item-text {
+        display: block !important;
+      }
+    }
+    .sidebar-menu-list {
+      overflow-x: hidden;
+      .sidebar-menu-item {
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: 0.2s all;
+
+        &:hover {
+          cursor: pointer;
+          background-color: desaturate(darken($spot-bg, 15%), 10%);
+          i,
+          .sidebar-menu-item-text {
+            color: darken($spot-bg, 45%);
+          }
+        }
+
+        &.active {
+          background-color: white;
+          .sidebar-menu-item-icon,
+          i,
+          .sidebar-menu-item-text {
+            color: $spot-bg;
+          }
+
+          .sidebar-menu-item-text {
+            &::before {
+              background-color: $spot-bg;
+            }
+          }
+        }
+
+        .sidebar-menu-item-icon {
+          display: flex;
+          // justify-content: center;
+          padding: ($sidebar-padding * 2);
+          color: darken($spot-bg, 35%);
+          transition: 0.2s all;
+
+          i {
+            font-size: 18px;
+            transition: 0.2s all;
+          }
+        }
+
+        .sidebar-menu-item-text {
+          // display: none;
+          position: relative;
+          font-weight: bold;
+          transition: 0.2s all;
+          color: darken($spot-bg, 35%);
+          margin-left: 5px;
+          padding-left: 10px;
+          font-size: 16px;
+          white-space: nowrap;
+
+          &::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 1px;
+            left: 0;
+            background-color: darken($spot-bg, 35%);
+            transition: 0.2s all;
+          }
+        }
+      }
+    }
+  }
+}
