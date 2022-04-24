@@ -1,0 +1,130 @@
+@import "../../settings";
+
+.topbar {
+  height: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $dark-bg;
+  z-index: 9;
+  padding-left: 45px;
+  transition: 0.2s all;
+  color: $text-color;
+  &.is-open {
+    padding-left: $sidebar-width;
+  }
+
+  .topbar-content {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+
+    .topbar-action {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 5px;
+      .topbar-action-list {
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+        color: lighten($dark-bg, 55%);
+      }
+      .topbar-action-search {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .topbar-profile {
+      height: 100%;
+      min-width: 200px;
+      background-color: $darker-bg;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5px;
+      position: relative;
+
+      .topbar-profile-info {
+        display: flex;
+        align-items: center;
+
+        .topbar-profile-name {
+          margin-left: 10px;
+          color: transparentize($text-color, 0.3);
+          font-weight: bold;
+        }
+
+        .topbar-profile-image {
+          position: relative;
+          .topbar-profile-notification-icon {
+            width: 15px;
+            height: 15px;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-radius: 100%;
+            overflow: hidden;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // font-weight: bold;
+          }
+
+          img {
+            border-radius: 100%;
+            overflow: hidden;
+            width: 32px;
+          }
+        }
+      }
+
+      .topbar-profile-info {
+      }
+
+      &:hover {
+        cursor: pointer;
+        .topbar-action-list {
+          max-height: 65px;
+        }
+      }
+
+      .topbar-action-list {
+        background-color: darken($darker-bg, 2%);
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        max-height: 0;
+        transition: 0.2s all;
+        overflow: hidden;
+
+        .topbar-action-item {
+          display: flex;
+          padding: 8px;
+          transition: 0.2s all;
+          &:hover {
+            background-color: darken($darker-bg, 5%);
+            cursor: pointer;
+          }
+        }
+
+        .topbar-action-item-icon {
+          width: 32px;
+          padding-left: 8px;
+          display: flex;
+          align-items: center;
+          margin-right: 7px;
+        }
+
+        .topbar-action-item-text {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

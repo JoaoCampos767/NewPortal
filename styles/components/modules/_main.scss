@@ -1,0 +1,47 @@
+@import "../../settings";
+
+.modules-wrapper {
+  position: fixed;
+  left: 45px;
+  bottom: 15px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  .module {
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    img {
+      height: $module-size;
+      width: $module-size;
+    }
+
+    position: relative;
+    bottom: 0;
+    transition: 0.2s all ease-in-out;
+    &:hover {
+      bottom: 5px;
+      cursor: pointer;
+      &::after {
+        top: -$module-tolltip-distance + 5px;
+        opacity: 1;
+      }
+    }
+
+    &::after {
+      transition: 0.2s all ease-in-out;
+      content: attr(data-title);
+      white-space: nowrap;
+      background-color: transparentize($module-tooltip-bg-color, 0.5);
+      opacity: 0;
+      color: $module-tooltip-text-color;
+      position: absolute;
+      top: -$module-tolltip-distance;
+      padding: 3px 9px;
+      left: 50%;
+      border-radius: 4px;
+      transform: translatex(-50%);
+    }
+  }
+}
