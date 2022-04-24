@@ -6,32 +6,31 @@ export default class ClassName extends React.Component<any, {}> {
     {
       return (
         <>
-          <div className="widget-chat">
-            <div className="widget-container">
-              <label className="widget-open" htmlFor="widget-open">
+          <div className="chat">
+            <div className="chat-container">
+              <label className="chat-open" htmlFor="chat-open">
                 <input
-                  className="widget-input-open"
-                  id="widget-open"
+                  className="chat-input-open"
+                  id="chat-open"
                   type="checkbox"
-                  name="widget-open-chat"
+                  name="chat-open-chat"
                 />
-                <div className="widget-button">
-                  <i className="fa-solid fa-message"></i>
+                <div className="chat-button">
+                  <i className="fas fa-comment"></i>
                 </div>
 
-                <div className="widget-content">
-                  <div className="widget-title">
+                <div className="chat-content">
+                  <div className="chat-title">
                     <figure>
                       <img
-                        className="widget-thumb"
+                        className="chat-thumb"
                         src="https://i.pravatar.cc/100"
                       />
                     </figure>
                     Bem vindo(a) ao nosso chat!
                   </div>
-                  <div className="widget-container-dialog">
+                  <div className="chat-container-dialog">
                     <div className="interaction-container">
-                      <p className="inicio-chat">Inicio: 20:00 - 24/04/2022</p>
                       <div className="interaction client">
                         <p>Boa tarde, tudo bem?</p>
                         <div className="dot"></div>
@@ -40,7 +39,7 @@ export default class ClassName extends React.Component<any, {}> {
                         <div className="photo">
                           <figure>
                             <img
-                              className="widget-thumb"
+                              className="chat-thumb"
                               src="https://i.pravatar.cc/100"
                             />
                           </figure>
